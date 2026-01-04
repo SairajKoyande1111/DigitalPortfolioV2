@@ -483,7 +483,6 @@ export const projects: Project[] = [
     galleryImages: [
       "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_1767560522258.png",
       "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_(2)_1767562543405.png",
-      "/attached_assets/Screenshot_2026-01-05_at_2.55.21_AM_1767561924460.png",
       "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_(4)_1767560522259.png",
       "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_(5)_1767560522259.png",
       "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_(6)_1767560522259.png",
