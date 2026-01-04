@@ -108,7 +108,12 @@ export const projects: Project[] = [
       "/attached_assets/Screenshot_2026-01-05_at_1.20.11_AM_1767556214013.png",
       "/attached_assets/Screenshot_2026-01-05_at_1.20.26_AM_1767556230792.png",
       "/attached_assets/Screenshot_2026-01-05_at_1.20.43_AM_1767556246375.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.21.02_AM_1767556266128.png"
+      "/attached_assets/Screenshot_2026-01-05_at_1.21.02_AM_1767556266128.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.28.25_AM_1767556710389.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.28.40_AM_1767556722609.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.28.49_AM_1767556732050.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.29.03_AM_1767556746584.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.29.14_AM_1767556756565.png"
     ],
     clientName: "Malay Damania",
     clientIndustry: "Business Coaching",
@@ -123,13 +128,18 @@ export const projects: Project[] = [
       "Interactive Course Showcase: Sophisticated UI for exploring and enrolling in business mastery programs",
       "Strategic Consultation Booking: Seamless integration for one-on-one professional coaching sessions",
       "Multi-Category Content Hub: Organized repository for podcasts, blogs, and growth strategies",
-      "Mobile-First Experience: High-performance design optimized for busy entrepreneurs on the move"
+      "Mobile-First Experience: High-performance design optimized for busy entrepreneurs on the move",
+      "Conversion-Optimized Funnels: Strategically designed landing pages for trial sessions at ₹99",
+      "Full SEO Implementation: Comprehensive on-page and technical SEO resulting in 300% organic growth",
+      "Automated Lead Capture: Smart contact forms with automated email responses and CRM integration"
     ],
     outcomes: [
       "2,500+ Businesses Transformed: Scaling 30+ years of local expertise to a global digital community",
       "100+ Startups Mentored: Successfully guiding the next generation of business leaders",
       "50+ Book Summaries: Delivering distilled actionable insights to over 1000+ active members",
-      "Global Brand Authority: Establishing a unified digital presence as a leading industry voice"
+      "Global Brand Authority: Establishing a unified digital presence as a leading industry voice",
+      "300% Organic Traffic Increase: Achieved through targeted SEO and content strategy within 3 months",
+      "₹99 Trial Success: High conversion rate on introductory coaching sessions via custom booking funnel"
     ]
   },
   {
