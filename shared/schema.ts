@@ -43,6 +43,7 @@ export interface Project {
   completedDate: string;
   technologies: string[];
   database?: string;
+  isMobileFirst?: boolean;
   features: string[];
   outcomes: string[];
 }

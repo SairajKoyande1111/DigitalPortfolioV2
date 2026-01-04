@@ -152,11 +152,11 @@ export default function ProjectsGallery() {
                     className="group cursor-pointer"
                     data-testid={`card-project-${project.id}`}
                   >
-                    <div className={`relative ${project.isMobileFirst ? 'aspect-[3/4]' : 'aspect-video'} overflow-hidden mb-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-gray-300 flex items-center justify-center`}>
+                    <div className="relative aspect-video overflow-hidden mb-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-white shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-gray-300 flex items-center justify-center">
                       <img
                         src={project.imageUrl}
                         alt={project.name}
-                        className={`transition-transform duration-500 group-hover:scale-105 ${project.isMobileFirst ? 'h-full w-auto object-contain' : 'w-full h-full object-cover'}`}
+                        className={`transition-transform duration-500 group-hover:scale-105 ${project.isMobileFirst ? 'h-[90%] w-auto object-contain' : 'w-full h-full object-cover'}`}
                         loading="lazy"
                       />
                     </div>
