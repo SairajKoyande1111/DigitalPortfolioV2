@@ -3,6 +3,7 @@ import { Link, useParams } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
+import { Card } from "@/components/ui/card";
 import { 
   ArrowLeft, 
   CheckCircle2, 
