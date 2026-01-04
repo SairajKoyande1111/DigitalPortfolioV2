@@ -154,23 +154,23 @@ export default function ProjectsGallery() {
                   >
                     <div className="relative aspect-video overflow-hidden mb-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-white shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-gray-300 flex items-center justify-center">
                       {project.isMobileFirst ? (
-                        <div className="flex items-center justify-center gap-2 h-full w-full p-2">
+                        <div className="flex items-center justify-center gap-2 h-full w-full">
                           <img
                             src={project.galleryImages[0] || project.imageUrl}
                             alt={`${project.name} screen 1`}
-                            className="h-[90%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                            className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
                           <img
                             src={project.galleryImages[3] || project.imageUrl}
                             alt={`${project.name} screen 2`}
-                            className="h-[90%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                            className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
                           <img
                             src={project.galleryImages[4] || project.imageUrl}
                             alt={`${project.name} screen 3`}
-                            className="h-[90%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                            className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
                         </div>
