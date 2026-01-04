@@ -83,6 +83,97 @@ export const services: Service[] = [
 export const projects: Project[] = [
   // Website Development Projects
   {
+    id: "w-trainwithwinston",
+    serviceId: "1",
+    name: "Train With Winston",
+    shortDescription: "High-performance digital ecosystem for 'Train with Winston' (House of Champions), designed to bridge the gap between physical gym training and global online coaching.",
+    fullDescription: "A performance-driven coaching platform designed to convert visitors into trainees. The platform offers a premium experience for members to transform their lives through expert guidance and a supportive community. It maintains the high standards of accountability and results that House of Champions is known for in their physical Mumbai studio.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-05_at_12.54.18_AM_1767554664658.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-05_at_12.54.18_AM_1767554664658.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.55.15_AM_1767554718059.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.55.36_AM_1767554739740.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.55.55_AM_1767554757731.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.56.27_AM_1767554790045.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.56.38_AM_1767554801929.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.56.50_AM_1767554814810.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.57.06_AM_1767554830106.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.57.20_AM_1767554843365.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.57.46_AM_1767554869292.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.58.02_AM_1767554885944.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.58.26_AM_1767554909863.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.58.42_AM_1767554926799.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.58.59_AM_1767554943069.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.59.13_AM_1767554956274.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.59.24_AM_1767554967409.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.59.36_AM_1767554978831.png"
+    ],
+    clientName: "Train with Winston",
+    clientIndustry: "Fitness & Wellness",
+    clientLocation: "Mumbai, India",
+    websiteUrl: "https://trainwithwinston.com/",
+    duration: "2 weeks",
+    completedDate: "December 2025",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Hostinger VPS"],
+    features: [
+      "Custom Training Programs: Personalized workout routines tailored to individual fitness goals and lifestyles",
+      "Interactive Transformation Gallery: High-impact visual showcase of real member results and success stories",
+      "Dynamic Pricing Ecosystem: Tiered coaching packages with integrated WhatsApp support for seamless onboarding",
+      "Expert Coaching Portal: Direct access to certified professionals and personalized nutrition guidance",
+      "Mobile-Optimized Interface: Seamless browsing experience for clients tracking workouts on the go",
+      "Winston Difference: Science-backed coaching that transforms lives, not just bodies",
+      "HOC Community: Direct access to a supportive batch moving towards their goals"
+    ],
+    outcomes: [
+      "2,000+ Clients Transformed: Successfully scaling local training to a global online community",
+      "18+ Certified Coaches: Empowering a dedicated team of fitness professionals to reach a wider audience",
+      "32,000+ Training Hours: Facilitating massive engagement through structured coaching programs",
+      "Global Community Growth: Bridging the distance between the Mumbai studio and international clients"
+    ]
+  },
+  {
+    id: "w-mings",
+    serviceId: "1",
+    name: "Ming's Chinese Cuisine",
+    shortDescription: "A luxury hospitality platform emphasizing fine dining, artistic presentation, and contemporary elegance.",
+    fullDescription: "A luxury-focused website for Ming's Chinese Cuisine that highlights their artistic presentation and contemporary setting. The project emphasizes fine dining values through sophisticated design, featuring high-end visual storytelling, seamless reservation management, and an interactive culinary showcase that mirrors the premium in-restaurant experience. Our goal was to create a digital presence as exquisite as their flavors, ensuring every pixel reflects their legacy of culinary perfection.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-05_at_12.19.33_AM_1767552578570.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-05_at_12.21.30_AM_1767552694727.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.23.59_AM_1767552841890.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.24.39_AM_1767552883532.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.24.56_AM_1767552898705.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.25.08_AM_1767552911937.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.25.21_AM_1767552924982.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.25.38_AM_1767552941290.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.25.51_AM_1767552954289.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.26.09_AM_1767552972069.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.26.23_AM_1767552985486.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.26.31_AM_1767552994291.png"
+    ],
+    clientName: "Ming's Chinese Cuisine",
+    clientIndustry: "Hospitality / Fine Dining",
+    clientLocation: "Mumbai, India",
+    websiteUrl: "https://mingschinesecuisine.in/",
+    duration: "2 weeks",
+    completedDate: "July 2025",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Hostinger VPS"],
+    features: [
+      "Advanced SEO Optimization: Strategic keyword integration and meta-tagging for maximum search visibility",
+      "Interactive Culinary Portfolio: High-resolution gallery showcasing artistic food presentation",
+      "Sophisticated Table Reservation: Seamless integration for premium guest booking experience",
+      "Mobile-First Responsive Design: Luxury experience maintained across all device types",
+      "High-Performance Architecture: Optimized loading speeds and smooth transitions",
+      "Custom Brand Identity: Digital translation of the restaurant's contemporary and heritage values"
+    ],
+    outcomes: [
+      "Significant improvement in local SEO rankings for fine dining in Mumbai",
+      "Enhanced digital brand authority and premium guest perception",
+      "Streamlined reservation workflow leading to increased booking conversions",
+      "Robust and scalable hosting on Hostinger VPS for consistent uptime"
+    ]
+  },
+  {
     id: "w-malaydamania",
     serviceId: "1",
     name: "Malay Damania",
@@ -188,6 +279,53 @@ export const projects: Project[] = [
     ]
   },
   {
+    id: "w-silverlining",
+    serviceId: "1",
+    name: "The Silver Lining",
+    shortDescription: "Comprehensive mental health and emotional wellness platform offering therapy and coaching services.",
+    fullDescription: "A sophisticated mental health ecosystem designed to bridge the gap between individuals seeking support and professional therapists. The project involved creating a deeply human, evidence-based digital platform that provides 1:1 therapy, life coaching, and corporate wellness programs with a focus on accessibility and compassionate care.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-05_at_1.37.56_AM_1767557280159.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-05_at_1.37.56_AM_1767557280159.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.38.40_AM_1767557322882.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.38.55_AM_1767557338211.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.39.24_AM_1767557367792.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.39.35_AM_1767557378859.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.39.47_AM_1767557390175.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.40.01_AM_1767557404607.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.40.15_AM_1767557417997.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.40.24_AM_1767557428045.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.40.39_AM_1767557443513.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.41.02_AM_1767557466060.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.42.00_AM_1767557523046.png",
+      "/attached_assets/Screenshot_2026-01-05_at_1.42.18_AM_1767557540576.png"
+    ],
+    clientName: "The Silver Lining",
+    clientIndustry: "Mental Health & Wellness",
+    clientLocation: "Mumbai, India",
+    websiteUrl: "https://thesilverlining.in/",
+    duration: "2 weeks",
+    completedDate: "October 2025",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Hostinger VPS"],
+    features: [
+      "Dual-Path Onboarding: Intuitive initial interface for individuals and organizations to find tailored support",
+      "Therapist Matching Engine: Smart discovery system to connect users with trauma-informed, Master's qualified professionals",
+      "Structured Care Workflows: Clear 4-step intake process from initial query to scheduled appointment",
+      "Comprehensive Service Directory: Detailed segments for 1:1 therapy, life coaching, and clinical supervision",
+      "Corporate Wellness Portal: Bespoke packages for workshops, leadership coaching, and employee support",
+      "Interactive Content Hub: Dedicated resources section for blogs, FAQs, and mental health education",
+      "Mobile-Optimized Intake: High-performance intake forms designed for seamless mobile accessibility",
+      "Automated Booking Integration: Streamlined scheduling system with WhatsApp integration for instant support"
+    ],
+    outcomes: [
+      "National Trust Established: Now trusted by leading organizations including Taj, Teach For India, and Freed",
+      "Verified Professional Network: All therapists are trauma-informed and queer-affirmative with Master's level qualifications",
+      "Streamlined Access: Reduced initial response time by 50% through automated intake and routing",
+      "Global Accessibility: Enabling mental health support for individuals wherever they are in their journey",
+      "Corporate Growth: Successfully onboarded multiple Tier-1 organizations for bespoke employee wellness packages"
+    ]
+  },
+  {
     id: "w-sai-krishna",
     serviceId: "1",
     name: "Sai Krishna Restaurant",
@@ -242,55 +380,6 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: "w-trainwithwinston",
-    serviceId: "1",
-    name: "Train With Winston",
-    shortDescription: "High-performance digital ecosystem for 'Train with Winston' (House of Champions), designed to bridge the gap between physical gym training and global online coaching.",
-    fullDescription: "A performance-driven coaching platform designed to convert visitors into trainees. The platform offers a premium experience for members to transform their lives through expert guidance and a supportive community. It maintains the high standards of accountability and results that House of Champions is known for in their physical Mumbai studio.",
-    imageUrl: "/attached_assets/Screenshot_2026-01-05_at_12.54.18_AM_1767554664658.png",
-    galleryImages: [
-      "/attached_assets/Screenshot_2026-01-05_at_12.54.18_AM_1767554664658.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.55.15_AM_1767554718059.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.55.36_AM_1767554739740.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.55.55_AM_1767554757731.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.56.27_AM_1767554790045.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.56.38_AM_1767554801929.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.56.50_AM_1767554814810.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.57.06_AM_1767554830106.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.57.20_AM_1767554843365.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.57.46_AM_1767554869292.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.58.02_AM_1767554885944.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.58.26_AM_1767554909863.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.58.42_AM_1767554926799.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.58.59_AM_1767554943069.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.59.13_AM_1767554956274.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.59.24_AM_1767554967409.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.59.36_AM_1767554978831.png"
-    ],
-    clientName: "Train with Winston",
-    clientIndustry: "Fitness & Wellness",
-    clientLocation: "Mumbai, India",
-    websiteUrl: "https://trainwithwinston.com/",
-    duration: "2 weeks",
-    completedDate: "December 2025",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Hostinger VPS"],
-    features: [
-      "Custom Training Programs: Personalized workout routines tailored to individual fitness goals and lifestyles",
-      "Interactive Transformation Gallery: High-impact visual showcase of real member results and success stories",
-      "Dynamic Pricing Ecosystem: Tiered coaching packages with integrated WhatsApp support for seamless onboarding",
-      "Expert Coaching Portal: Direct access to certified professionals and personalized nutrition guidance",
-      "Mobile-Optimized Interface: Seamless browsing experience for clients tracking workouts on the go",
-      "Winston Difference: Science-backed coaching that transforms lives, not just bodies",
-      "HOC Community: Direct access to a supportive batch moving towards their goals"
-    ],
-    outcomes: [
-      "2,000+ Clients Transformed: Successfully scaling local training to a global online community",
-      "18+ Certified Coaches: Empowering a dedicated team of fitness professionals to reach a wider audience",
-      "32,000+ Training Hours: Facilitating massive engagement through structured coaching programs",
-      "Global Community Growth: Bridging the distance between the Mumbai studio and international clients"
-    ]
-  },
-  {
     id: "w-nikzone",
     serviceId: "1",
     name: "Nikzone Fashion",
@@ -315,95 +404,6 @@ export const projects: Project[] = [
       "Stronger brand positioning in the fashion market",
       "Improved navigation for large product catalogs",
       "Better conversion from 'discovery' to 'cart'"
-    ]
-  },
-  {
-    id: "w-silverlining",
-    serviceId: "1",
-    name: "The Silver Lining",
-    shortDescription: "Comprehensive mental health and emotional wellness platform offering therapy and coaching services.",
-    fullDescription: "A sophisticated mental health ecosystem designed to bridge the gap between individuals seeking support and professional therapists. The project involved creating a deeply human, evidence-based digital platform that provides 1:1 therapy, life coaching, and corporate wellness programs with a focus on accessibility and compassionate care.",
-    imageUrl: "/attached_assets/Screenshot_2026-01-05_at_1.37.56_AM_1767557280159.png",
-    galleryImages: [
-      "/attached_assets/Screenshot_2026-01-05_at_1.37.56_AM_1767557280159.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.38.40_AM_1767557322882.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.38.55_AM_1767557338211.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.39.24_AM_1767557367792.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.39.35_AM_1767557378859.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.39.47_AM_1767557390175.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.40.01_AM_1767557404607.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.40.15_AM_1767557417997.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.40.24_AM_1767557428045.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.40.39_AM_1767557443513.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.41.02_AM_1767557466060.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.42.00_AM_1767557523046.png",
-      "/attached_assets/Screenshot_2026-01-05_at_1.42.18_AM_1767557540576.png"
-    ],
-    clientName: "The Silver Lining",
-    clientIndustry: "Mental Health & Wellness",
-    clientLocation: "Mumbai, India",
-    websiteUrl: "https://thesilverlining.in/",
-    duration: "2 weeks",
-    completedDate: "October 2025",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Hostinger VPS"],
-    features: [
-      "Dual-Path Onboarding: Intuitive initial interface for individuals and organizations to find tailored support",
-      "Therapist Matching Engine: Smart discovery system to connect users with trauma-informed, Master's qualified professionals",
-      "Structured Care Workflows: Clear 4-step intake process from initial query to scheduled appointment",
-      "Comprehensive Service Directory: Detailed segments for 1:1 therapy, life coaching, and clinical supervision",
-      "Corporate Wellness Portal: Bespoke packages for workshops, leadership coaching, and employee support",
-      "Interactive Content Hub: Dedicated resources section for blogs, FAQs, and mental health education",
-      "Mobile-Optimized Intake: High-performance intake forms designed for seamless mobile accessibility",
-      "Automated Booking Integration: Streamlined scheduling system with WhatsApp integration for instant support"
-    ],
-    outcomes: [
-      "National Trust Established: Now trusted by leading organizations including Taj, Teach For India, and Freed",
-      "Verified Professional Network: All therapists are trauma-informed and queer-affirmative with Master's level qualifications",
-      "Streamlined Access: Reduced initial response time by 50% through automated intake and routing",
-      "Global Accessibility: Enabling mental health support for individuals wherever they are in their journey",
-      "Corporate Growth: Successfully onboarded multiple Tier-1 organizations for bespoke employee wellness packages"
-    ]
-  },
-  {
-    id: "w-mings",
-    serviceId: "1",
-    name: "Ming's Chinese Cuisine",
-    shortDescription: "A luxury hospitality platform emphasizing fine dining, artistic presentation, and contemporary elegance.",
-    fullDescription: "A luxury-focused website for Ming's Chinese Cuisine that highlights their artistic presentation and contemporary setting. The project emphasizes fine dining values through sophisticated design, featuring high-end visual storytelling, seamless reservation management, and an interactive culinary showcase that mirrors the premium in-restaurant experience. Our goal was to create a digital presence as exquisite as their flavors, ensuring every pixel reflects their legacy of culinary perfection.",
-    imageUrl: "/attached_assets/Screenshot_2026-01-05_at_12.19.33_AM_1767552578570.png",
-    galleryImages: [
-      "/attached_assets/Screenshot_2026-01-05_at_12.21.30_AM_1767552694727.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.23.59_AM_1767552841890.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.24.39_AM_1767552883532.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.24.56_AM_1767552898705.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.25.08_AM_1767552911937.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.25.21_AM_1767552924982.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.25.38_AM_1767552941290.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.25.51_AM_1767552954289.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.26.09_AM_1767552972069.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.26.23_AM_1767552985486.png",
-      "/attached_assets/Screenshot_2026-01-05_at_12.26.31_AM_1767552994291.png"
-    ],
-    clientName: "Ming's Chinese Cuisine",
-    clientIndustry: "Hospitality / Fine Dining",
-    clientLocation: "Mumbai, India",
-    websiteUrl: "https://mingschinesecuisine.in/",
-    duration: "2 weeks",
-    completedDate: "July 2025",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Hostinger VPS"],
-    features: [
-      "Advanced SEO Optimization: Strategic keyword integration and meta-tagging for maximum search visibility",
-      "Interactive Culinary Portfolio: High-resolution gallery showcasing artistic food presentation",
-      "Sophisticated Table Reservation: Seamless integration for premium guest booking experience",
-      "Mobile-First Responsive Design: Luxury experience maintained across all device types",
-      "High-Performance Architecture: Optimized loading speeds and smooth transitions",
-      "Custom Brand Identity: Digital translation of the restaurant's contemporary and heritage values"
-    ],
-    outcomes: [
-      "Significant improvement in local SEO rankings for fine dining in Mumbai",
-      "Enhanced digital brand authority and premium guest perception",
-      "Streamlined reservation workflow leading to increased booking conversions",
-      "Robust and scalable hosting on Hostinger VPS for consistent uptime"
     ]
   },
   {
