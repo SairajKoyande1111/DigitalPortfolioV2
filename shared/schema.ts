@@ -1,0 +1,843 @@
+import { sql } from "drizzle-orm";
+import { pgTable, text, varchar, integer } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod";
+
+export const users = pgTable("users", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  username: text("username").notNull().unique(),
+  password: text("password").notNull(),
+});
+
+export const insertUserSchema = createInsertSchema(users).pick({
+  username: true,
+  password: true,
+});
+
+export type InsertUser = z.infer<typeof insertUserSchema>;
+export type User = typeof users.$inferSelect;
+
+// Service type definition
+export interface Service {
+  id: string;
+  title: string;
+  tagline: string;
+  icon: string;
+  slug: string;
+}
+
+// Project type definition
+export interface Project {
+  id: string;
+  serviceId: string;
+  name: string;
+  shortDescription: string;
+  fullDescription: string;
+  imageUrl: string;
+  galleryImages: string[];
+  clientName: string;
+  clientIndustry: string;
+  clientLocation: string;
+  websiteUrl: string;
+  duration: string;
+  completedDate: string;
+  technologies: string[];
+  database?: string;
+  features: string[];
+  outcomes: string[];
+}
+
+// Sample services data
+export const services: Service[] = [
+  {
+    id: "1",
+    title: "Website Development",
+    tagline: "Modern Web Solutions",
+    icon: "Globe",
+    slug: "website-development"
+  },
+  {
+    id: "2",
+    title: "Mobile Application Development",
+    tagline: "iOS & Android Apps",
+    icon: "Smartphone",
+    slug: "mobile-application-development"
+  },
+  {
+    id: "3",
+    title: "Software Development",
+    tagline: "Custom Software",
+    icon: "Code",
+    slug: "software-development"
+  },
+  {
+    id: "4",
+    title: "Digital Marketing",
+    tagline: "Growth Strategies",
+    icon: "TrendingUp",
+    slug: "digital-marketing"
+  }
+];
+
+// Sample projects data
+export const projects: Project[] = [
+  // Website Development Projects
+  {
+    id: "w-malaydamania",
+    serviceId: "1",
+    name: "Malay Damania",
+    shortDescription: "Professional portfolio and content platform for business growth consultant Malay Damania.",
+    fullDescription: "A sophisticated personal branding and consulting platform designed to showcase Malay Damania's expertise in business growth and leadership. The project involved creating a high-performance website that integrates his voice, offerings, and consultation services into a seamless user journey.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-03_141237_1767429909558.png",
+    galleryImages: ["/attached_assets/Screenshot_2026-01-03_141237_1767429909558.png"],
+    clientName: "Malay Damania",
+    clientIndustry: "Business Consulting",
+    clientLocation: "India",
+    websiteUrl: "https://malaydamania.com",
+    duration: "4 weeks",
+    completedDate: "2024",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    features: [
+      "Custom Brand Identity Integration",
+      "Dynamic Content Management for 'MD's Voice'",
+      "Integrated Consultation Booking System",
+      "Ultra-responsive Performance Optimized Design"
+    ],
+    outcomes: [
+      "200% increase in consultation inquiries",
+      "Unified digital brand presence established",
+      "Significant improvement in mobile engagement"
+    ]
+  },
+  {
+    id: "w-vora",
+    serviceId: "1",
+    name: "Vora Electric Service",
+    shortDescription: "Corporate industrial website for Vora Electric Service, focusing on heritage and innovation.",
+    fullDescription: "A robust corporate platform for Vora Electric Service that bridges their legacy of integrity with modern innovation. The site highlights their industrial electrical solutions and legacy of excellence, providing a professional interface for high-stakes business clients.",
+    imageUrl: "/attached_assets/image_1767430043719.png",
+    galleryImages: ["/attached_assets/image_1767430043719.png"],
+    clientName: "Vora Electric Service",
+    clientIndustry: "Industrial Services",
+    clientLocation: "India",
+    websiteUrl: "#",
+    duration: "4 weeks",
+    completedDate: "2024",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Lucide Icons"],
+    features: [
+      "Industrial Service Showcase Grid",
+      "Legacy and History Timeline Integration",
+      "Direct Business Inquiry Workflow",
+      "High-Impact Visual Heritage Presentation"
+    ],
+    outcomes: [
+      "Modernized brand perception for industrial clients",
+      "Streamlined B2B inquiry process",
+      "Improved digital visibility for specialized electrical services"
+    ]
+  },
+  {
+    id: "w-sai-krishna",
+    serviceId: "1",
+    name: "Sai Krishna Restaurant",
+    shortDescription: "Visual-rich culinary platform for Sai Krishna, showcasing authentic vegetarian cuisine.",
+    fullDescription: "A vibrant, appetizing website for Sai Krishna that captures their 10+ year legacy in creative vegetarian cuisine. The project focused on high-quality food photography and intuitive navigation to enhance the restaurant's digital presence and drive customer visits.",
+    imageUrl: "/attached_assets/image_1767430285097.png",
+    galleryImages: ["/attached_assets/image_1767430285097.png"],
+    clientName: "Sai Krishna",
+    clientIndustry: "Hospitality / F&B",
+    clientLocation: "India",
+    websiteUrl: "#",
+    duration: "4 weeks",
+    completedDate: "2024",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
+    features: [
+      "Interactive Visual Menu Presentation",
+      "Storytelling-based 'About Us' Section",
+      "Integrated Gallery and Video Sections",
+      "Optimized for Restaurant Discovery SEO"
+    ],
+    outcomes: [
+      "Higher engagement on menu viewing pages",
+      "Stronger digital storytelling for the brand",
+      "Increased visibility for seasonal specials"
+    ]
+  },
+  {
+    id: "w-ramani",
+    serviceId: "1",
+    name: "Ramani Fashion",
+    shortDescription: "Elegant e-commerce inspired showcase for Ramani Fashion's ethnic wear collection.",
+    fullDescription: "A sophisticated fashion showcase for Ramani, highlighting their diverse ethnic wear collections from Jamdani Paithani to Patch Work. The design emphasizes elegance and clean aesthetics to match the quality of their craftsmanship.",
+    imageUrl: "/attached_assets/image_1767430466900.png",
+    galleryImages: ["/attached_assets/image_1767430466900.png"],
+    clientName: "Ramani",
+    clientIndustry: "Fashion / Retail",
+    clientLocation: "India",
+    websiteUrl: "#",
+    duration: "4 weeks",
+    completedDate: "2024",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Product Sorting"],
+    features: [
+      "Collection-based Visual Categorization",
+      "WhatsApp Direct Ordering Integration",
+      "Trending and New Arrivals Showcase",
+      "High-Resolution Product Zoom Interface"
+    ],
+    outcomes: [
+      "Enhanced visual appeal for online shoppers",
+      "Simplified ordering process via social integration",
+      "Clearer categorization of complex inventory"
+    ]
+  },
+  {
+    id: "w-trainwithwinston",
+    serviceId: "1",
+    name: "Train With Winston",
+    shortDescription: "High-conversion fitness coaching platform for expert trainer Winston.",
+    fullDescription: "A performance-driven coaching platform designed to convert visitors into trainees. The site focuses on transformations, social proof, and clear calls to action for Winston's online coaching business.",
+    imageUrl: "/attached_assets/image_1767430508947.png",
+    galleryImages: ["/attached_assets/image_1767430508947.png"],
+    clientName: "Winston",
+    clientIndustry: "Fitness & Wellness",
+    clientLocation: "India",
+    websiteUrl: "#",
+    duration: "4 weeks",
+    completedDate: "2024",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Landing Page SEO"],
+    features: [
+      "Transformation Success Story Gallery",
+      "Package-based Pricing Tiers",
+      "Integrated Free Consultation Booking",
+      "Testimonial and Community Proof Sections"
+    ],
+    outcomes: [
+      "Significant increase in free consultation leads",
+      "Better communication of training value propositions",
+      "Higher conversion rate for premium packages"
+    ]
+  },
+  {
+    id: "w-nikzone",
+    serviceId: "1",
+    name: "Nikzone Fashion",
+    shortDescription: "Authoritative fashion portal for Nikzone, emphasizing power and style.",
+    fullDescription: "A bold, high-fashion portal for Nikzone that positions the brand as a leader in authoritative attire. The project combined editorial-style layouts with functional product discovery.",
+    imageUrl: "/attached_assets/image_1767430923478.png",
+    galleryImages: ["/attached_assets/image_1767430923478.png"],
+    clientName: "Nikzone",
+    clientIndustry: "Fashion / Apparel",
+    clientLocation: "India",
+    websiteUrl: "#",
+    duration: "4 weeks",
+    completedDate: "2024",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Dynamic Sliders"],
+    features: [
+      "Power-Brand Narrative Storytelling",
+      "Advanced Search and Filtering for Products",
+      "Multi-Category Collections Grid",
+      "Seamless Checkout Path Integration"
+    ],
+    outcomes: [
+      "Stronger brand positioning in the fashion market",
+      "Improved navigation for large product catalogs",
+      "Better conversion from 'discovery' to 'cart'"
+    ]
+  },
+  {
+    id: "w-silverlining",
+    serviceId: "1",
+    name: "The Silver Lining",
+    shortDescription: "Empathetic mental health services platform with personalized user journeys.",
+    fullDescription: "A compassionate and accessible platform for The Silver Lining, designed to guide users toward mental health support. The design uses soft visuals and clear pathways to reduce friction for those seeking help.",
+    imageUrl: "/attached_assets/image_1767430994785.png",
+    galleryImages: ["/attached_assets/image_1767430994785.png"],
+    clientName: "Silverlining",
+    clientIndustry: "Healthcare / Wellness",
+    clientLocation: "India",
+    websiteUrl: "#",
+    duration: "4 weeks",
+    completedDate: "2024",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Accessibility First"],
+    features: [
+      "Personalized Service Selection ('For Myself' vs 'For Organisation')",
+      "WhatsApp Support Integration",
+      "Safe and Calming Visual Aesthetic",
+      "Mobile-First Accessible Navigation"
+    ],
+    outcomes: [
+      "Lowered barriers for users seeking mental health aid",
+      "Increased organizational inquiry leads",
+      "Positive feedback on site empathy and ease of use"
+    ]
+  },
+  {
+    id: "w-mings",
+    serviceId: "1",
+    name: "Ming's Chinese Cuisine",
+    shortDescription: "Contemporary hospitality platform for a premium Chinese restaurant experience.",
+    fullDescription: "A luxury-focused website for Ming's Chinese Cuisine that highlights their artistic presentation and contemporary setting. The project emphasizes fine dining values through sophisticated design.",
+    imageUrl: "/attached_assets/image_1767431090639.png",
+    galleryImages: ["/attached_assets/image_1767431090639.png"],
+    clientName: "Mings",
+    clientIndustry: "Hospitality / F&B",
+    clientLocation: "India",
+    websiteUrl: "#",
+    duration: "4 weeks",
+    completedDate: "2024",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "UI/UX Design"],
+    features: [
+      "Full-Screen Luxury Brand Hero",
+      "Direct Table Reservation System",
+      "Interactive Full Menu Viewer",
+      "Guest Testimonial Showcase"
+    ],
+    outcomes: [
+      "Uplift in online reservation volume",
+      "Enhanced perception of brand exclusivity",
+      "Better menu engagement across all devices"
+    ]
+  },
+  {
+    id: "w-mings-dm-menu",
+    serviceId: "1",
+    name: "Ming's Digital Menu",
+    shortDescription: "Specialized digital-first menu platform for interactive guest ordering.",
+    fullDescription: "A lean, fast, and visual digital menu application designed for Ming's to improve the in-house guest ordering experience. Optimized for mobile discovery and quick selection.",
+    imageUrl: "/attached_assets/image_1767431111998.png",
+    galleryImages: ["/attached_assets/image_1767431111998.png"],
+    clientName: "Mings",
+    clientIndustry: "Hospitality / Tech",
+    clientLocation: "India",
+    websiteUrl: "#",
+    duration: "2 weeks",
+    completedDate: "2024",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Mobile Optimization"],
+    features: [
+      "High-Speed Visual Category Navigation",
+      "Interactive 'What's New' Section",
+      "Optimized for Tablet and Mobile Browser Use",
+      "Direct Menu-to-Staff Communication Path"
+    ],
+    outcomes: [
+      "Reduced menu-to-ordering friction",
+      "Positive feedback on visual selection process",
+      "Efficient updates for seasonal items"
+    ]
+  },
+  {
+    id: "w-barrelborn-dm-menu",
+    serviceId: "1",
+    name: "Barrelborn Digital Menu",
+    shortDescription: "Elegant craft-focused digital menu for Barrelborn Dine & Draft.",
+    fullDescription: "A specialized digital menu for Barrelborn that balances their premium food and craft beer offerings. The design focuses on mood, quality imagery, and easy discovery of their extensive draft selection.",
+    imageUrl: "/attached_assets/image_1767431309429.png",
+    galleryImages: ["/attached_assets/image_1767431309429.png"],
+    clientName: "Barrelborn",
+    clientIndustry: "Hospitality / Nightlife",
+    clientLocation: "India",
+    websiteUrl: "#",
+    duration: "2 weeks",
+    completedDate: "2024",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Dark Theme UI"],
+    features: [
+      "Split-Category Focus (Food vs Craft Beers)",
+      "High-Contrast Premium Brand Visuals",
+      "Fast Navigation for Large Drink Lists",
+      "Mobile-Optimized Layout for Dim Lighting"
+    ],
+    outcomes: [
+      "Enhanced discovery of craft beer varieties",
+      "Stronger brand consistency through digital touchpoints",
+      "Increased guest satisfaction with ordering speed"
+    ]
+  },
+
+  // Mobile Application Development Projects
+  {
+    id: "m1",
+    serviceId: "2",
+    name: "FitTrack Health App",
+    shortDescription: "Comprehensive fitness tracking app with workout plans and nutrition guidance.",
+    fullDescription: "FitTrack is a full-featured health and fitness application that helps users achieve their wellness goals. The app includes workout tracking, custom exercise plans, nutrition logging, progress photos, and social challenges. Integration with wearable devices provides real-time health metrics and activity monitoring.",
+    imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1576678927484-cc907957088c?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop"
+    ],
+    clientName: "FitLife Technologies",
+    clientIndustry: "Health & Fitness Tech",
+    clientLocation: "Austin, TX",
+    websiteUrl: "https://fittrack-app.io",
+    duration: "6 months",
+    completedDate: "August 2024",
+    technologies: ["React Native", "Firebase", "HealthKit", "Google Fit", "Redux", "AWS", "S3", "JWT Authentication"],
+    features: ["Workout Tracking", "Nutrition Logging", "Progress Photos", "Social Challenges", "Wearable Integration", "Custom Plans"],
+    outcomes: ["500K+ downloads", "4.8 star rating", "85% user retention rate"]
+  },
+  {
+    id: "m2",
+    serviceId: "2",
+    name: "QuickDeliver Logistics",
+    shortDescription: "Real-time delivery tracking and fleet management mobile solution.",
+    fullDescription: "Developed a comprehensive logistics application for QuickDeliver, enabling real-time package tracking, driver management, and route optimization. The app serves both customers and delivery personnel with tailored interfaces. Features include live GPS tracking, push notifications, proof of delivery, and performance analytics.",
+    imageUrl: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800&h=600&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop"
+    ],
+    clientName: "QuickDeliver Corp",
+    clientIndustry: "Logistics & Delivery",
+    clientLocation: "Chicago, IL",
+    websiteUrl: "https://quickdeliver.app",
+    duration: "5 months",
+    completedDate: "July 2024",
+    technologies: ["Flutter", "Dart", "Google Maps API", "Node.js", "MongoDB", "AWS", "S3", "JWT Authentication"],
+    features: ["Live GPS Tracking", "Route Optimization", "Push Notifications", "Proof of Delivery", "Driver Dashboard", "Customer App"],
+    outcomes: ["35% reduction in delivery times", "98% on-time delivery rate", "25% fuel cost savings"]
+  },
+  {
+    id: "m3",
+    serviceId: "2",
+    name: "MindfulMoments Meditation",
+    shortDescription: "Calming meditation app with guided sessions and sleep sounds.",
+    fullDescription: "MindfulMoments provides a serene space for users to practice meditation and mindfulness. The app features guided meditation sessions, breathing exercises, sleep stories, ambient sounds, and progress tracking. Beautiful animations and a calming color palette create an immersive relaxation experience.",
+    imageUrl: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&h=600&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&h=400&fit=crop"
+    ],
+    clientName: "Wellness Digital",
+    clientIndustry: "Mental Health & Wellness",
+    clientLocation: "Los Angeles, CA",
+    websiteUrl: "https://mindfulmoments.app",
+    duration: "4 months",
+    completedDate: "June 2024",
+    technologies: ["Swift", "Kotlin", "AVFoundation", "Core Animation", "CloudKit", "AWS", "S3", "JWT Authentication"],
+    features: ["Guided Meditations", "Sleep Stories", "Breathing Exercises", "Ambient Sounds", "Progress Tracking", "Offline Mode"],
+    outcomes: ["1M+ active users", "Top 10 in Health category", "92% would recommend to friends"]
+  },
+
+  // Software Development Projects
+  {
+    id: "s1",
+    serviceId: "3",
+    name: "PRISM Post Production Management System",
+    shortDescription: "Comprehensive studio management software for post-production houses managing film, TV, and advertisement editing workflows.",
+    fullDescription: "PRISM is a comprehensive studio management software designed for post-production houses managing film, TV serial, web series, and advertisement editing workflows. The system provides end-to-end management of studio resources, bookings, billing, and conflict resolution with features including centralized booking management with conflict detection, real-time visibility of room and editor availability, automated chalan/invoice generation, and multi-company support for franchise operations.",
+    imageUrl: "/attached_assets/Screenshot_2025-12-13_at_10.13.14_AM_1765600998382.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2025-12-13_at_10.14.35_AM_1765601079175.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.16.42_AM_1765601205553.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.18.07_AM_1765601290581.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.18.16_AM_1765601299915.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.18.34_AM_1765601318659.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.18.45_AM_1765601329418.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.18.57_AM_1765601340964.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.19.08_AM_1765601351836.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.19.19_AM_1765601361994.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.19.42_AM_1765601385847.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.20.11_AM_1765601414230.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.20.19_AM_1765601422310.png",
+      "/attached_assets/Screenshot_2025-12-13_at_10.20.36_AM_1765601438975.png"
+    ],
+    clientName: "Vishrani Computech",
+    clientIndustry: "Media & Entertainment",
+    clientLocation: "Mumbai, India",
+    websiteUrl: "#",
+    duration: "4 weeks",
+    completedDate: "December 2024",
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "Shadcn/ui", "AWS", "S3", "JWT Authentication"],
+    features: [
+      "Problem: Manual scheduling caused frequent double-bookings | Solution: Automated booking calendar with real-time conflict detection",
+      "Problem: No visibility into room/editor availability | Solution: Live dashboard showing resource status across all locations",
+      "Problem: Invoice generation was error-prone | Solution: Automated chalan/invoice generation with accurate billing",
+      "Problem: Managing multiple studio locations separately | Solution: Multi-company support with centralized control",
+      "Problem: Tracking editor leave was disorganized | Solution: Integrated leave management with booking impact analysis",
+      "Problem: No standardized access control | Solution: Role-based permissions for different staff levels"
+    ],
+    outcomes: [
+      "Problem: Double-bookings disrupted operations | Result: 100% elimination of scheduling conflicts",
+      "Problem: Hours spent on manual invoicing | Result: 80% reduction in billing processing time",
+      "Problem: No cross-location visibility | Result: Unified management across all studio locations",
+      "Problem: Lost revenue from booking gaps | Result: 35% improvement in studio utilization"
+    ]
+  },
+  {
+    id: "s2",
+    serviceId: "3",
+    name: "Mauli Car World Automobile Management System",
+    shortDescription: "Complete car parts & service management system with inventory tracking, customer management, service workflow, and comprehensive business analytics.",
+    fullDescription: "AutoShop Manager is a full-stack web application designed specifically for automotive repair shops and car parts businesses. The system helps manage car parts inventory and stock levels, customer relationships and vehicle records, service workflow from inquiry to completion, employee management and HR operations, sales orders and payment tracking, purchase orders and supplier management, task assignments and leave management, and customer communications and feedback. The application provides a professional dashboard interface with role-based access control supporting Admin, Manager, Inventory Manager, Sales Executive, HR Manager, and Service Staff roles, ensuring each user only sees and manages what's relevant to their responsibilities.",
+    imageUrl: "/attached_assets/Screenshot_2025-12-13_at_2.52.05_PM_1765617730192.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2025-12-13_at_2.52.25_PM_1765617747558.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.52.59_PM_1765617782614.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.53.20_PM_1765617804010.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.53.48_PM_1765617831907.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.54.01_PM_1765617844771.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.06.02_PM_1767350165009.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.06.17_PM_1767350180955.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.06.28_PM_1767350191454.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.06.44_PM_1767350207690.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.06.53_PM_1767350216308.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.07.11_PM_1767350234035.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.07.22_PM_1767350245789.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.07.35_PM_1767350258538.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.07.52_PM_1767350275322.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.01_PM_1767350283589.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.13_PM_1767350295270.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.20_PM_1767350303305.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.29_PM_1767350312023.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.40_PM_1767350322873.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.48_PM_1767350330755.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.09.02_PM_1767350344709.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.09.09_PM_1767350351520.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.09.33_PM_1767350376086.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.09.53_PM_1767350396036.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.10.03_PM_1767350406004.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.32.26_PM_1767351749792.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.32.40_PM_1767351763094.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.32.48_PM_1767351774095.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.33.00_PM_1767351783230.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.33.10_PM_1767351793210.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.33.19_PM_1767351802061.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.33.49_PM_1767351832331.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.34.06_PM_1767351849926.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.34.16_PM_1767351858327.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.34.22_PM_1767351864679.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.34.29_PM_1767351871698.png"
+    ],
+    clientName: "Mauli Car World",
+    clientIndustry: "Automotive & Auto Parts",
+    clientLocation: "Beed, Maharashtra, India",
+    websiteUrl: "#",
+    duration: "6 weeks",
+    completedDate: "December 2024",
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn/ui", "TanStack Query", "Zod", "JWT Authentication", "AWS", "S3"],
+    features: [
+      "Problem: No centralized inventory tracking | Solution: Real-time product catalog with stock levels, low stock alerts, and warehouse location tracking",
+      "Problem: Customer vehicle records were scattered | Solution: Complete customer database with multiple vehicle registration and service history",
+      "Problem: Service workflow was disorganized | Solution: Visual Kanban-style workflow board with four stages: Inquired, Working, Waiting, Completed",
+      "Problem: Manual invoice creation was time-consuming | Solution: Automated invoice generation with payment status tracking and PDF export",
+      "Problem: No visibility into business performance | Solution: Role-based analytics dashboard with sales reports, inventory status, and employee metrics",
+      "Problem: Managing different staff access levels | Solution: Five distinct user roles with granular permissions for each module"
+    ],
+    outcomes: [
+      "Problem: Stock levels were unknown until running out | Result: Real-time inventory alerts reduced stockouts by 90%",
+      "Problem: Customer information was lost between visits | Result: Complete service history retention for repeat customers",
+      "Problem: No tracking of service job progress | Result: Visual workflow reduced service completion time by 40%",
+      "Problem: Revenue leakage from unpaid invoices | Result: Payment tracking improved collection rate by 60%"
+    ]
+  },
+  {
+    id: "s3",
+    serviceId: "3",
+    name: "POS Restaurant Billing Software",
+    shortDescription: "A modern, efficient point-of-sale solution for restaurants featuring real-time order tracking, table management, and comprehensive analytics.",
+    fullDescription: "POS Restaurant Billing Software is a comprehensive management solution designed to streamline restaurant operations. The system features a robust point-of-sale interface for quick billing, real-time table management with visual status indicators, a Kitchen Display System (KDS) for efficient order preparation, and detailed inventory tracking. The application provides owners and managers with powerful analytics dashboards covering sales trends, item performance, and kitchen efficiency, enabling data-driven decisions to improve restaurant profitability.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-02_at_12.53.40_PM_1767338624773.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-02_at_12.53.55_PM_1767338638330.png",
+      "/attached_assets/Screenshot_2026-01-02_at_12.57.57_PM_1767338880402.png",
+      "/attached_assets/Screenshot_2026-01-02_at_12.58.14_PM_1767338897246.png",
+      "/attached_assets/Screenshot_2026-01-02_at_12.58.44_PM_1767338926434.png",
+      "/attached_assets/Screenshot_2026-01-02_at_12.58.53_PM_1767338936696.png",
+      "/attached_assets/Screenshot_2026-01-02_at_12.59.25_PM_1767338969298.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.00.02_PM_1767339005133.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.00.32_PM_1767339035716.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.00.41_PM_1767339044630.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.01.48_PM_1767339111432.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.02.03_PM_1767339126168.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.02.13_PM_1767339135866.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.02.30_PM_1767339152973.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.02.39_PM_1767339165203.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.04.07_PM_1767339251912.png"
+    ],
+    clientName: "Foodies Delight",
+    clientIndustry: "Hospitality / F&B",
+    clientLocation: "Pune, India",
+    websiteUrl: "#",
+    duration: "8 weeks",
+    completedDate: "December 2024",
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Shadcn/ui", "Recharts", "Framer Motion", "JWT Authentication", "AWS", "S3"],
+    features: [
+      "Problem: Slow manual billing processes | Solution: High-speed POS interface with quick-search and categories for rapid checkout",
+      "Problem: Disorganized table management | Solution: Real-time visual table map with status indicators (Available, Occupied, Preparing, Ready)",
+      "Problem: Communication gaps between front and back of house | Solution: Integrated Kitchen Display System (KDS) for instant order visibility and preparation tracking",
+      "Problem: Difficulty splitting bills among groups | Solution: Flexible bill-splitting functionality supporting equal or custom amounts and multiple payment methods",
+      "Problem: Inefficient inventory tracking | Solution: Comprehensive inventory management with low-stock alerts and purchase order generation",
+      "Problem: Lack of operational insights | Solution: Advanced analytics dashboards covering sales performance, peak hours, and staff efficiency"
+    ],
+    outcomes: [
+      "Problem: High peak-hour wait times | Result: 50% reduction in order-to-billing turnaround time",
+      "Problem: Inaccurate order preparation | Result: 95% decrease in order errors through digital KDS",
+      "Problem: Manual report generation effort | Result: Real-time visibility into revenue, growth (+18%), and customer retention (65%)",
+      "Problem: High inventory wastage | Result: 30% reduction in food wastage through better stock tracking"
+    ]
+  },
+  {
+    id: "s4",
+    serviceId: "3",
+    name: "Online Training/Gym Management System",
+    shortDescription: "A comprehensive multi-role dashboard for gym owners, trainers, and clients to manage workouts, schedules, and memberships.",
+    fullDescription: "The Online Training/Gym Management System is a sophisticated platform designed to streamline fitness center operations. It features three distinct dashboards tailored for Admins (owners), Trainers, and Clients. Admins can manage staff, track revenue, and oversee facility usage. Trainers have dedicated tools for creating personalized workout plans, scheduling sessions, and tracking client progress. Clients benefit from an easy-to-use interface to book classes, log their workouts, monitor their fitness journey, and manage their memberships. The system ensures a seamless flow of information between all parties, enhancing the training experience and operational efficiency.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-02_at_4.06.02_PM_1767350165009.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-02_at_4.06.02_PM_1767350165009.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.06.17_PM_1767350180955.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.06.28_PM_1767350191454.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.06.44_PM_1767350207690.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.06.53_PM_1767350216308.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.07.11_PM_1767350234035.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.07.22_PM_1767350245789.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.07.35_PM_1767350258538.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.07.52_PM_1767350275322.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.01_PM_1767350283589.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.13_PM_1767350295270.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.20_PM_1767350303305.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.29_PM_1767350312023.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.40_PM_1767350322873.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.08.48_PM_1767350330755.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.09.02_PM_1767350344709.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.09.09_PM_1767350351520.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.09.33_PM_1767350376086.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.09.53_PM_1767350396036.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.10.03_PM_1767350406004.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.32.26_PM_1767351749792.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.32.40_PM_1767351763094.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.32.48_PM_1767351774095.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.33.00_PM_1767351783230.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.33.10_PM_1767351793210.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.33.19_PM_1767351802061.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.33.49_PM_1767351832331.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.34.06_PM_1767351849926.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.34.16_PM_1767351858327.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.34.22_PM_1767351864679.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.34.29_PM_1767351871698.png"
+    ],
+    clientName: "FitPro Gym Management",
+    clientIndustry: "Fitness & Technology",
+    clientLocation: "Global",
+    websiteUrl: "#",
+    duration: "12 weeks",
+    completedDate: "January 2026",
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Shadcn/ui", "Recharts", "Framer Motion", "JWT Authentication", "AWS", "S3"],
+    features: [
+      "Problem: Manual trainer and client management | Solution: Centralized dashboard for managing accounts and assignments",
+      "Problem: Inefficient workout and diet delivery | Solution: Customizable templates for personalized nutrition and training plans",
+      "Problem: Fragmented video content delivery | Solution: Integrated video library with categorization and easy client access",
+      "Problem: Scheduling conflicts for live sessions | Solution: Real-time booking calendar with automated reminders",
+      "Problem: Lack of business performance visibility | Solution: Comprehensive analytics dashboard with revenue and growth tracking",
+      "Problem: Difficult client progress monitoring | Solution: Built-in habit tracking and wellness logs for real-time updates"
+    ],
+    outcomes: [
+      "Challenge: High administrative overhead | Result: 50% reduction in manual data entry and staff management tasks",
+      "Challenge: Low client retention | Result: 30% increase in client engagement through interactive tracking",
+      "Challenge: Opaque revenue streams | Result: Clear visibility into financial trends and package distribution",
+      "Challenge: Scheduling inefficiencies | Result: 100% elimination of double-booking incidents via real-time sync"
+    ]
+  },
+  {
+    id: "s5",
+    serviceId: "3",
+    name: "AutoGamma Automobile Management System",
+    shortDescription: "Advanced automobile workshop management system with spare parts inventory, service scheduling, and customer loyalty tracking.",
+    fullDescription: "AutoGamma is a next-generation automobile management system designed to modernize traditional garage and spare parts operations. The system provides a unified platform for managing service appointments, technician productivity, and complex inventory across multiple locations. Key modules include a dynamic parts catalog with automated reordering, detailed vehicle service history, insurance claim tracking, and a customer portal for appointment booking and service updates. The application focuses on operational efficiency and customer retention through data-driven insights and automated communication workflows.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-02_at_1.53.43_PM_1767342226760.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-02_at_1.53.43_PM_1767342226760.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.54.12_PM_1767342255755.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.54.46_PM_1767342289387.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.54.58_PM_1767342301085.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.55.50_PM_1767342353140.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.56.00_PM_1767342362945.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.56.33_PM_1767342396340.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.56.48_PM_1767342410904.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.56.58_PM_1767342421156.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.57.10_PM_1767342432758.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.57.46_PM_1767342469951.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.57.57_PM_1767342479604.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.58.10_PM_1767342492855.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.58.21_PM_1767342503617.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.58.34_PM_1767342516506.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.58.42_PM_1767342524734.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.58.49_PM_1767342531920.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.58.59_PM_1767342541373.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.59.07_PM_1767342550387.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.59.17_PM_1767342559470.png"
+    ],
+    clientName: "AutoGamma Services",
+    clientIndustry: "Automotive Service & Repair",
+    clientLocation: "Mumbai, India",
+    websiteUrl: "#",
+    duration: "10 weeks",
+    completedDate: "January 2025",
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Shadcn/ui", "TanStack Query", "Zod", "JWT Authentication", "AWS", "S3"],
+    database: "PostgreSQL",
+    features: [
+      "Problem: Inefficient spare parts management | Solution: Advanced inventory system with real-time stock tracking, category filtering, and low-stock alerts",
+      "Problem: Manual service job scheduling | Solution: Digital service board for real-time tracking of job status from vehicle arrival to completion",
+      "Problem: Fragmented customer communication | Solution: Integrated notification system for service updates and automated maintenance reminders",
+      "Problem: Complex billing for parts and labor | Solution: Unified invoicing module with split-billing support and payment status tracking",
+      "Problem: Difficulty tracking technician performance | Solution: Productivity dashboard monitoring job completion times and efficiency metrics",
+      "Problem: Paper-based insurance documentation | Solution: Digital claim management module for storing vehicle insurance details and claim history"
+    ],
+    outcomes: [
+      "Problem: Frequent stockouts of critical parts | Result: Automated reordering system reduced inventory gaps by 75%",
+      "Problem: Long customer waiting times | Result: Optimized scheduling reduced average service turnaround time by 30%",
+      "Problem: Manual data entry errors | Result: End-to-end digitalization improved data accuracy and reporting reliability",
+      "Problem: Lack of business growth insights | Result: Real-time analytics enabled 15% increase in cross-selling service packages"
+    ]
+  },
+  {
+    id: "s6",
+    serviceId: "3",
+    name: "Soryouth Renewable Energy Infrastructure / Customer Management System",
+    shortDescription: "Complete Solar EPC infrastructure and customer management system.",
+    fullDescription: "Soryouth is a specialized CRM and project management platform designed for the renewable energy sector, specifically Solar EPC (Engineering, Procurement, and Construction) firms. It provides a unified interface for managing the entire customer lifecycle, from initial lead acquisition and automated proposal generation to site surveys with GPS tracking and post-installation service management (AMC). The system features real-time revenue analytics, installation performance monitoring, inventory tracking for solar components, and integrated communication tools, ensuring operational transparency and enhanced customer satisfaction.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-02_at_2.05.39_PM_1767342943907.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-02_at_2.05.39_PM_1767342943907.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.12.06_PM_1767343331120.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.12.19_PM_1767343342141.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.12.33_PM_1767343356268.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.12.41_PM_1767343363906.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.07_PM_1767343391385.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.18_PM_1767343401276.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.26_PM_1767343409400.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.34_PM_1767343416852.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.41_PM_1767343423954.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.51_PM_1767343433276.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.58_PM_1767343441270.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.06_PM_1767343448709.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.13_PM_1767343455926.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.21_PM_1767343464082.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.30_PM_1767343473343.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.38_PM_1767343480871.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.46_PM_1767343488868.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.55_PM_1767343497424.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.15.03_PM_1767343505916.png"
+    ],
+    clientName: "Soryouth Renewable Energy",
+    clientIndustry: "Renewable Energy / Solar EPC",
+    clientLocation: "Pune, India",
+    websiteUrl: "#",
+    duration: "12 weeks",
+    completedDate: "January 2026",
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Recharts", "AWS", "S3", "JWT Authentication"],
+    features: [
+      "Problem: Solar installations lack real-time visibility | Solution: Real-time revenue & installation performance dashboards",
+      "Problem: Manual proposal generation is time-consuming | Solution: Lead management with automated quotation & proposal generation",
+      "Problem: Inaccurate site survey data | Solution: Site survey module with GPS tracking & documentation",
+      "Problem: Disorganized project workflows | Solution: Kanban-style project pipeline tracking",
+      "Problem: Inefficient solar component tracking | Solution: Inventory management for solar components",
+      "Problem: Complex subsidy and invoicing | Solution: Automated invoicing & subsidy tracking system",
+      "Problem: Manual vendor and contract tracking | Solution: Vendor & AMC (Annual Maintenance Contract) management"
+    ],
+    outcomes: [
+      "Problem: Manual site surveys were inefficient | Result: Digital survey module improved reporting speed by 50%",
+      "Problem: Lack of project visibility | Result: Real-time dashboards provided 100% transparency on installation progress",
+      "Problem: Complex subsidy and invoicing | Result: Automated system reduced payment processing time by 30%"
+    ]
+  },
+  // Digital Marketing Projects
+  {
+    id: "d1",
+    serviceId: "4",
+    name: "LaunchPad Brand Campaign",
+    shortDescription: "Comprehensive digital marketing campaign for a tech startup launch.",
+    fullDescription: "Executed a full-scale digital marketing campaign for LaunchPad's product launch. The campaign included social media strategy, content marketing, influencer partnerships, paid advertising, email marketing, and PR outreach. A/B testing and analytics drove continuous optimization throughout the campaign.",
+    imageUrl: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=800&h=600&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
+    ],
+    clientName: "LaunchPad Technologies",
+    clientIndustry: "SaaS / Technology",
+    clientLocation: "Seattle, WA",
+    websiteUrl: "https://launchpad-tech.io",
+    duration: "3 months",
+    completedDate: "November 2024",
+    technologies: ["Google Ads", "Facebook Ads", "HubSpot", "Mailchimp", "Hootsuite", "Google Analytics", "AWS", "S3", "JWT Authentication"],
+    features: ["Social Media Strategy", "Content Marketing", "Influencer Outreach", "Paid Advertising", "Email Campaigns", "PR Management"],
+    outcomes: ["10M+ impressions", "500K website visits", "15K product signups"]
+  },
+  {
+    id: "d2",
+    serviceId: "4",
+    name: "LocalEats Restaurant Marketing",
+    shortDescription: "Local SEO and social media marketing for restaurant chain.",
+    fullDescription: "Developed and executed a comprehensive local marketing strategy for a restaurant chain with 15 locations. The campaign focused on local SEO optimization, review management, social media engagement, influencer partnerships, and targeted advertising. Each location received customized campaigns while maintaining brand consistency.",
+    imageUrl: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&h=600&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&h=400&fit=crop"
+    ],
+    clientName: "LocalEats Restaurant Group",
+    clientIndustry: "Food & Hospitality",
+    clientLocation: "Miami, FL",
+    websiteUrl: "https://localeats-restaurants.com",
+    duration: "6 months",
+    completedDate: "October 2024",
+    technologies: ["Google My Business", "Yelp", "Instagram", "TikTok", "SEMrush", "BrightLocal", "AWS", "S3", "JWT Authentication"],
+    features: ["Local SEO", "Review Management", "Social Media Marketing", "Influencer Campaigns", "Geo-targeted Ads", "Analytics Dashboard"],
+    outcomes: ["150% increase in foot traffic", "4.5 average rating across platforms", "200% growth in social followers"]
+  },
+  {
+    id: "d3",
+    serviceId: "4",
+    name: "EcoWear Sustainability Campaign",
+    shortDescription: "Purpose-driven marketing campaign for sustainable fashion brand.",
+    fullDescription: "Created an impactful marketing campaign highlighting EcoWear's commitment to sustainable fashion. The campaign combined storytelling, video content, social causes, and community engagement. Partnerships with environmental organizations and eco-influencers amplified the message, driving both brand awareness and sales.",
+    imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=400&fit=crop"
+    ],
+    clientName: "EcoWear Fashion",
+    clientIndustry: "Sustainable Fashion",
+    clientLocation: "Denver, CO",
+    websiteUrl: "https://ecowear-fashion.com",
+    duration: "4 months",
+    completedDate: "September 2024",
+    technologies: ["YouTube", "Pinterest", "Shopify", "Klaviyo", "Buffer", "Sprout Social", "AWS", "S3", "JWT Authentication"],
+    features: ["Video Content", "Influencer Marketing", "Cause Marketing", "Community Building", "Email Automation", "Content Calendar"],
+    outcomes: ["5M video views", "300% increase in brand mentions", "45% increase in sales"]
+  }
+];
+
+// Helper function to get projects by service
+export function getProjectsByServiceSlug(slug: string): Project[] {
+  const service = services.find(s => s.slug === slug);
+  if (!service) return [];
+  return projects.filter(p => p.serviceId === service.id);
+}
+
+// Helper function to get project by ID
+export function getProjectById(id: string): Project | undefined {
+  return projects.find(p => p.id === id);
+}
+
+// Helper function to get service by slug
+export function getServiceBySlug(slug: string): Service | undefined {
+  return services.find(s => s.slug === slug);
+}
