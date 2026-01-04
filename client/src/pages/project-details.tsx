@@ -317,7 +317,7 @@ export default function ProjectDetails() {
                   <img
                     src={project?.imageUrl}
                     alt={project?.name}
-                    className="max-h-[600px] w-auto object-contain mx-auto"
+                    className={`${project?.isMobileFirst ? 'max-h-[700px] w-auto' : 'w-full h-auto'} object-contain mx-auto`}
                   />
                 </div>
                 
@@ -332,7 +332,7 @@ export default function ProjectDetails() {
                       return (
                         <div
                           key={index}
-                          className="relative overflow-hidden cursor-pointer aspect-[3/4] bg-gray-50 rounded-lg border border-gray-100 flex items-center justify-center"
+                          className={`relative overflow-hidden cursor-pointer ${project?.isMobileFirst ? 'aspect-[3/4]' : 'aspect-video'} bg-gray-50 rounded-lg border border-gray-100 flex items-center justify-center`}
                           onClick={() => showViewAll ? openLightbox(0) : openLightbox(index + 1)}
                           data-testid={`thumbnail-desktop-${index}`}
                         >
@@ -366,7 +366,7 @@ export default function ProjectDetails() {
                 <img
                   src={project?.imageUrl}
                   alt={project?.name}
-                  className="max-h-[500px] w-auto object-contain mx-auto"
+                  className={`${project?.isMobileFirst ? 'max-h-[500px] w-auto' : 'w-full h-auto'} object-contain mx-auto`}
                 />
               </div>
               
@@ -381,7 +381,7 @@ export default function ProjectDetails() {
                     return (
                       <div
                         key={index}
-                        className="relative overflow-hidden cursor-pointer aspect-[3/4] bg-gray-50 rounded-lg border border-gray-100 flex items-center justify-center"
+                        className={`relative overflow-hidden cursor-pointer ${project?.isMobileFirst ? 'aspect-[3/4]' : 'aspect-video'} bg-gray-50 rounded-lg border border-gray-100 flex items-center justify-center`}
                         onClick={() => showViewAll ? openLightbox(0) : openLightbox(index + 1)}
                         data-testid={`thumbnail-mobile-${index}`}
                       >

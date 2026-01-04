@@ -430,6 +430,7 @@ export const projects: Project[] = [
     websiteUrl: "https://menu.mingschinesecuisine.in/menu",
     duration: "4 weeks",
     completedDate: "July 2025",
+    isMobileFirst: true,
     technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "Web Audio API", "Web Speech API", "MongoDB", "Hostinger VPS"],
     database: "MongoDB",
     features: [
