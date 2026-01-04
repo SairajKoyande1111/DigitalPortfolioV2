@@ -297,8 +297,7 @@ export const projects: Project[] = [
     websiteUrl: "https://mingschinesecuisine.in/",
     duration: "2 weeks",
     completedDate: "July 2025",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Hostinger VPS"],
-    database: "MongoDB",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "Hostinger VPS"],
     features: [
       "Advanced SEO Optimization: Strategic keyword integration and meta-tagging for maximum search visibility",
       "Interactive Culinary Portfolio: High-resolution gallery showcasing artistic food presentation",

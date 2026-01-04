@@ -27,7 +27,8 @@ import {
   SiAmazon,
   SiAmazons3,
   SiMongodb,
-  SiZod
+  SiZod,
+  SiHostinger
 } from "react-icons/si";
 import { Shield, Layers, Database, RefreshCw } from "lucide-react";
 
@@ -41,7 +42,7 @@ const techIconMap: Record<string, { icon: JSX.Element; category: string }> = {
   "MySQL": { icon: <SiMysql className="w-7 h-7 text-[#4479A1]" />, category: "Database" },
   "MongoDB": { icon: <SiMongodb className="w-7 h-7 text-[#47A248]" />, category: "Database" },
   "AWS": { icon: <SiAmazon className="w-7 h-7 text-[#FF9900]" />, category: "Deployment" },
-  "Hostinger VPS": { icon: <SiAmazon className="w-7 h-7 text-[#569A31]" />, category: "Deployment" },
+  "Hostinger VPS": { icon: <SiHostinger className="w-7 h-7 text-[#673DE6]" />, category: "Deployment" },
   "JWT Authentication": { icon: <Shield className="w-7 h-7 text-green-600" />, category: "Security" },
   "Recharts": { icon: <CheckCircle2 className="w-7 h-7 text-blue-400" />, category: "Frontend" },
   "Framer Motion": { icon: <CheckCircle2 className="w-7 h-7 text-purple-400" />, category: "Frontend" },
@@ -500,7 +501,7 @@ export default function ProjectDetails() {
                       className="text-sm font-medium text-black dark:text-black hover:underline inline-flex items-center gap-1"
                       data-testid="link-website"
                     >
-                      Visit Site
+                      {project.websiteUrl.replace("https://", "").replace("/", "")}
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   ) : (
