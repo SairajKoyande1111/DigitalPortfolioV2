@@ -156,19 +156,19 @@ export default function ProjectsGallery() {
                       {project.isMobileFirst ? (
                         <div className="flex items-center justify-center gap-2 h-full w-full">
                           <img
-                            src={project.galleryImages[0] || project.imageUrl}
+                            src={project.galleryImages[0]}
                             alt={`${project.name} screen 1`}
                             className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
                           <img
-                            src={project.galleryImages[3] || project.imageUrl}
+                            src={project.galleryImages[1]}
                             alt={`${project.name} screen 2`}
                             className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
                           <img
-                            src={project.galleryImages[4] || project.imageUrl}
+                            src={project.galleryImages[2]}
                             alt={`${project.name} screen 3`}
                             className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
