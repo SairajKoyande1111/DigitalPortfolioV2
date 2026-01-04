@@ -152,16 +152,16 @@ export default function ProjectsGallery() {
                     className="group cursor-pointer"
                     data-testid={`card-project-${project.id}`}
                   >
-                    <div className="relative aspect-video overflow-hidden mb-4 rounded-lg border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
+                    <div className="relative aspect-video overflow-hidden mb-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-gray-300">
                       <img
                         src={project.imageUrl}
                         alt={project.name}
-                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
                     </div>
                     <div className="space-y-2">
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-900 line-clamp-2 group-hover:text-gray-700 transition-colors text-center">
+                      <h3 className="text-xl font-medium text-gray-900 dark:text-gray-900 line-clamp-2 group-hover:text-black transition-colors text-center">
                         {project.name}
                       </h3>
                     </div>
