@@ -194,27 +194,37 @@ export const projects: Project[] = [
     id: "w-trainwithwinston",
     serviceId: "1",
     name: "Train With Winston",
-    shortDescription: "High-conversion fitness coaching platform for expert trainer Winston.",
-    fullDescription: "A performance-driven coaching platform designed to convert visitors into trainees. The site focuses on transformations, social proof, and clear calls to action for Winston's online coaching business.",
-    imageUrl: "/attached_assets/image_1767430508947.png",
-    galleryImages: ["/attached_assets/image_1767430508947.png"],
-    clientName: "Winston",
+    shortDescription: "High-performance digital ecosystem for 'Train with Winston' (House of Champions), designed to bridge the gap between physical gym training and global online coaching.",
+    fullDescription: "A performance-driven coaching platform designed to convert visitors into trainees. The platform offers a premium experience for members to transform their lives through expert guidance and a supportive community. It maintains the high standards of accountability and results that House of Champions is known for in their physical Mumbai studio.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-05_at_12.54.18_AM_1767554664658.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-05_at_12.55.36_AM_1767554739740.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.56.27_AM_1767554790045.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.57.06_AM_1767554830106.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.57.20_AM_1767554843365.png",
+      "/attached_assets/Screenshot_2026-01-05_at_12.57.46_AM_1767554869292.png"
+    ],
+    clientName: "Train with Winston",
     clientIndustry: "Fitness & Wellness",
-    clientLocation: "India",
-    websiteUrl: "#",
-    duration: "4 weeks",
-    completedDate: "2024",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Landing Page SEO"],
+    clientLocation: "Mumbai, India",
+    websiteUrl: "https://trainwithwinston.com/",
+    duration: "2 weeks",
+    completedDate: "August 2025",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Hostinger VPS"],
     features: [
-      "Transformation Success Story Gallery",
-      "Package-based Pricing Tiers",
-      "Integrated Free Consultation Booking",
-      "Testimonial and Community Proof Sections"
+      "Custom Training Programs: Personalized workout routines tailored to individual fitness goals and lifestyles",
+      "Interactive Transformation Gallery: High-impact visual showcase of real member results and success stories",
+      "Dynamic Pricing Ecosystem: Tiered coaching packages with integrated WhatsApp support for seamless onboarding",
+      "Expert Coaching Portal: Direct access to certified professionals and personalized nutrition guidance",
+      "Mobile-Optimized Interface: Seamless browsing experience for clients tracking workouts on the go",
+      "Winston Difference: Science-backed coaching that transforms lives, not just bodies",
+      "HOC Community: Direct access to a supportive batch moving towards their goals"
     ],
     outcomes: [
-      "Significant increase in free consultation leads",
-      "Better communication of training value propositions",
-      "Higher conversion rate for premium packages"
+      "2,000+ Clients Transformed: Successfully scaling local training to a global online community",
+      "18+ Certified Coaches: Empowering a dedicated team of fitness professionals to reach a wider audience",
+      "32,000+ Training Hours: Facilitating massive engagement through structured coaching programs",
+      "Global Community Growth: Bridging the distance between the Mumbai studio and international clients"
     ]
   },
   {
