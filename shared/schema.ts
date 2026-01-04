@@ -221,7 +221,7 @@ export const projects: Project[] = [
     clientLocation: "Mumbai, India",
     websiteUrl: "https://trainwithwinston.com/",
     duration: "2 weeks",
-    completedDate: "August 2025",
+    completedDate: "December 2025",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Hostinger VPS"],
     features: [
       "Custom Training Programs: Personalized workout routines tailored to individual fitness goals and lifestyles",
