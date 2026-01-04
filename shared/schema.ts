@@ -430,7 +430,8 @@ export const projects: Project[] = [
     websiteUrl: "https://menu.mingschinesecuisine.in/menu",
     duration: "4 weeks",
     completedDate: "July 2025",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "Web Audio API", "Web Speech API"],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "Web Audio API", "Web Speech API", "MongoDB", "Hostinger VPS"],
+    database: "MongoDB",
     features: [
       "One-Tap Social Media Integration: Instant connection to Instagram, Facebook, and YouTube",
       "One-Tap Google Review: Streamlined feedback loop for diners to rate the restaurant instantly",
@@ -439,7 +440,8 @@ export const projects: Project[] = [
       "Dynamic Categories & Filters: Effortless navigation through Soups, Starters, Main Course, and more with Veg/Non-Veg filters",
       "Visual Menu with Rich Content: High-definition food photography with detailed descriptions and pricing",
       "Mobile-Optimized Interface: Vertical-scrolling design specifically engineered for smartphone browsing",
-      "Interactive Restaurant Information: Easy access to address, contact details, and operational hours"
+      "Interactive Restaurant Information: Easy access to address, contact details, and operational hours",
+      "Deployment: Securely hosted on Hostinger VPS for high performance and reliability"
     ],
     outcomes: [
       "Revolutionized the in-house ordering experience with interactive digital discovery",

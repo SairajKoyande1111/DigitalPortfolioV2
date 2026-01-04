@@ -152,11 +152,11 @@ export default function ProjectsGallery() {
                     className="group cursor-pointer"
                     data-testid={`card-project-${project.id}`}
                   >
-                    <div className="relative aspect-video overflow-hidden mb-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-gray-300">
+                    <div className="relative aspect-[3/4] md:aspect-video overflow-hidden mb-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-gray-300">
                       <img
                         src={project.imageUrl}
                         alt={project.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
                     </div>

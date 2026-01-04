@@ -310,14 +310,14 @@ export default function ProjectDetails() {
               <div className="grid grid-cols-3 gap-4 px-4 sm:px-6 lg:px-8">
                 {/* Main Image - Left Side */}
                 <div 
-                  className="col-span-2 overflow-hidden cursor-pointer"
+                  className="col-span-2 overflow-hidden cursor-pointer bg-gray-50 rounded-xl border border-gray-100 flex items-center justify-center"
                   onClick={() => openLightbox(0)}
                   data-testid="image-main-desktop"
                 >
                   <img
                     src={project?.imageUrl}
                     alt={project?.name}
-                    className="w-full h-auto"
+                    className="max-h-[600px] w-auto object-contain mx-auto"
                   />
                 </div>
                 
@@ -332,14 +332,14 @@ export default function ProjectDetails() {
                       return (
                         <div
                           key={index}
-                          className="relative overflow-hidden cursor-pointer aspect-video"
+                          className="relative overflow-hidden cursor-pointer aspect-[3/4] bg-gray-50 rounded-lg border border-gray-100 flex items-center justify-center"
                           onClick={() => showViewAll ? openLightbox(0) : openLightbox(index + 1)}
                           data-testid={`thumbnail-desktop-${index}`}
                         >
                           <img
                             src={img}
                             alt={`${project?.name} gallery ${index + 1}`}
-                            className="w-full h-full object-cover"
+                            className="max-h-full w-auto object-contain"
                             loading="lazy"
                           />
                           {showViewAll && (
@@ -359,14 +359,14 @@ export default function ProjectDetails() {
             <section className="lg:hidden">
               {/* Main Image */}
               <div 
-                className="overflow-hidden cursor-pointer mb-2"
+                className="overflow-hidden cursor-pointer mb-2 bg-gray-50 rounded-xl border border-gray-100 flex items-center justify-center"
                 onClick={() => openLightbox(0)}
                 data-testid="image-main-mobile"
               >
                 <img
                   src={project?.imageUrl}
                   alt={project?.name}
-                  className="w-full h-auto"
+                  className="max-h-[500px] w-auto object-contain mx-auto"
                 />
               </div>
               
@@ -381,14 +381,14 @@ export default function ProjectDetails() {
                     return (
                       <div
                         key={index}
-                        className="relative overflow-hidden cursor-pointer aspect-video"
+                        className="relative overflow-hidden cursor-pointer aspect-[3/4] bg-gray-50 rounded-lg border border-gray-100 flex items-center justify-center"
                         onClick={() => showViewAll ? openLightbox(0) : openLightbox(index + 1)}
                         data-testid={`thumbnail-mobile-${index}`}
                       >
                         <img
                           src={img}
                           alt={`${project?.name} gallery ${index + 1}`}
-                          className="w-full h-full object-cover"
+                          className="max-h-full w-auto object-contain"
                           loading="lazy"
                         />
                         {showViewAll && (
