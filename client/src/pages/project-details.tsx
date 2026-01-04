@@ -575,7 +575,7 @@ export default function ProjectDetails() {
                 <div className="space-y-8">
                   <h2 className="text-3xl font-bold text-black flex items-center gap-3">
                     <span className="w-1.5 h-10 bg-primary rounded-full" />
-                    Core Features & SEO
+                    Project Features
                   </h2>
                   <div className="grid gap-4">
                     {(project?.features ?? []).map((feature, idx) => {
