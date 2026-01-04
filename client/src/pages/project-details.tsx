@@ -40,7 +40,7 @@ const techIconMap: Record<string, { icon: JSX.Element; category: string }> = {
   "MySQL": { icon: <SiMysql className="w-7 h-7 text-[#4479A1]" />, category: "Database" },
   "MongoDB": { icon: <SiMongodb className="w-7 h-7 text-[#47A248]" />, category: "Database" },
   "AWS": { icon: <SiAmazon className="w-7 h-7 text-[#FF9900]" />, category: "Deployment" },
-  "S3": { icon: <SiAmazons3 className="w-7 h-7 text-[#569A31]" />, category: "Deployment" },
+  "Hostinger VPS": { icon: <SiAmazon className="w-7 h-7 text-[#569A31]" />, category: "Deployment" },
   "JWT Authentication": { icon: <Shield className="w-7 h-7 text-green-600" />, category: "Security" },
   "Recharts": { icon: <CheckCircle2 className="w-7 h-7 text-blue-400" />, category: "Frontend" },
   "Framer Motion": { icon: <CheckCircle2 className="w-7 h-7 text-purple-400" />, category: "Frontend" },
@@ -562,129 +562,70 @@ export default function ProjectDetails() {
               </div>
             </motion.section>
 
-            {/* Key Features Section - Problem/Solution Format */}
+            {/* Key Features & Results Section - Enhanced UI */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12"
             >
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-900 mb-8 flex items-center gap-3">
-                <span className="w-1 h-8 bg-green-500 rounded-full" />
-                Key Features
-              </h2>
-              <div
-                className="grid grid-cols-1 gap-4"
-                data-testid="list-features"
-              >
-                {(project?.features ?? []).map((feature, index) => {
-                  const hasProblemSolution = feature.includes(" | ");
-                  if (hasProblemSolution) {
-                    const parts = feature.split(" | ");
-                    const problemPart = parts[0];
-                    const solutionPart = parts[1];
+              <div className="space-y-8">
+                <h2 className="text-3xl font-bold text-black flex items-center gap-3">
+                  <span className="w-1.5 h-10 bg-primary rounded-full" />
+                  Core Features & SEO
+                </h2>
+                <div className="grid gap-4">
+                  {(project?.features ?? []).map((feature, idx) => {
+                    const [title, description] = feature.includes(":") 
+                      ? feature.split(":") 
+                      : [feature, ""];
                     
-                    const problemText = problemPart.replace(/Problem:\s*/i, "").trim();
-                    const solutionText = solutionPart.replace(/Solution:\s*/i, "").trim();
                     return (
-                      <div
-                        key={index}
-                        className="bg-white dark:bg-white border border-gray-200 rounded-md overflow-hidden"
-                      >
-                        <div className="grid grid-cols-1 md:grid-cols-2">
-                          <div className="p-4 bg-red-50 dark:bg-red-50 flex items-start gap-3">
-                            <AlertTriangle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                            <div>
-                              <span className="text-xs font-semibold text-red-600 uppercase tracking-wider">Problem</span>
-                              <p className="text-sm text-gray-800 dark:text-gray-800 mt-1">{problemText}</p>
+                      <Card key={idx} className="p-5 border-none bg-gray-50/50 hover-elevate transition-all duration-300 group">
+                        <div className="flex gap-4">
+                          <div className="mt-1 flex-shrink-0">
+                            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                              <Lightbulb className="w-5 h-5" />
                             </div>
                           </div>
-                          <div className="p-4 bg-green-50 dark:bg-green-50 flex items-start gap-3">
-                            <Lightbulb className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                            <div>
-                              <span className="text-xs font-semibold text-green-600 uppercase tracking-wider">Solution</span>
-                              <p className="text-sm text-gray-800 dark:text-gray-800 mt-1">{solutionText}</p>
-                            </div>
+                          <div className="space-y-1">
+                            <h3 className="font-bold text-black leading-tight">
+                              {title.trim()}
+                            </h3>
+                            {description && (
+                              <p className="text-sm text-gray-600 leading-relaxed">
+                                {description.trim()}
+                              </p>
+                            )}
                           </div>
                         </div>
-                      </div>
+                      </Card>
                     );
-                  }
-                  return (
-                    <div
-                      key={index}
-                      className="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-50 border border-gray-200 rounded-md"
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-base text-gray-800 dark:text-gray-800 font-medium">{feature}</span>
-                    </div>
-                  );
-                })}
+                  })}
+                </div>
+              </div>
+
+              <div className="space-y-8">
+                <h2 className="text-3xl font-bold text-black flex items-center gap-3">
+                  <span className="w-1.5 h-10 bg-green-500 rounded-full" />
+                  Project Impact
+                </h2>
+                <div className="grid gap-4">
+                  {(project?.outcomes ?? []).map((outcome, idx) => (
+                    <Card key={idx} className="p-6 border-none bg-green-50/30 border-l-4 border-l-green-500 hover-elevate transition-all duration-300">
+                      <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
+                          <CheckCircle2 className="w-5 h-5" />
+                        </div>
+                        <p className="font-medium text-gray-800 leading-relaxed italic">
+                          "{outcome}"
+                        </p>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
               </div>
             </motion.section>
-
-            {/* Project Outcomes Section - Problem/Result Format */}
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <h2 className="text-2xl font-bold text-black dark:text-black mb-8 flex items-center gap-3">
-                <span className="w-1 h-8 bg-indigo-500 rounded-full" />
-                Project Results
-              </h2>
-              <div
-                className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                data-testid="list-outcomes"
-              >
-                {(project?.outcomes ?? []).map((outcome, index) => {
-                  const hasProblemResult = outcome.includes(" | ");
-                  if (hasProblemResult) {
-                    const [problem, result] = outcome.split(" | ");
-                    const problemText = problem.replace("Problem: ", "");
-                    const resultText = result.replace("Result: ", "");
-                    return (
-                      <div
-                        key={index}
-                        className="border border-gray-200 rounded-md overflow-hidden"
-                      >
-                        <div className="p-4 border-b border-gray-200">
-                          <div className="flex items-start gap-3">
-                            <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
-                            <div>
-                              <span className="text-xs font-semibold text-black uppercase tracking-wider">Challenge</span>
-                              <p className="text-sm text-black dark:text-black mt-1">{problemText}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="p-4">
-                          <div className="flex items-start gap-3">
-                            <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                            <div>
-                              <span className="text-xs font-semibold text-green-600 uppercase tracking-wider">Result</span>
-                              <p className="text-sm font-semibold text-black dark:text-black mt-1">{resultText}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  }
-                  return (
-                    <div
-                      key={index}
-                      className="flex items-start gap-4 p-5 border border-gray-200 rounded-md"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                        <span className="text-indigo-600 font-bold text-sm">{index + 1}</span>
-                      </div>
-                      <p className="text-base text-black dark:text-black font-medium leading-relaxed">
-                        {outcome}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-            </motion.section>
-
           </motion.div>
         )}
       </div>
