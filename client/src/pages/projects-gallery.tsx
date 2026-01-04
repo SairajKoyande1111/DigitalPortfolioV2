@@ -162,13 +162,13 @@ export default function ProjectsGallery() {
                             loading="lazy"
                           />
                           <img
-                            src={project.galleryImages[1] || project.imageUrl}
+                            src={project.galleryImages[3] || project.imageUrl}
                             alt={`${project.name} screen 2`}
                             className="h-[90%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
                           <img
-                            src={project.galleryImages[2] || project.imageUrl}
+                            src={project.galleryImages[4] || project.imageUrl}
                             alt={`${project.name} screen 3`}
                             className="h-[90%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
