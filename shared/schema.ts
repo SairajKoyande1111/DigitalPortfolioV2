@@ -423,7 +423,9 @@ export const projects: Project[] = [
       "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_(5)_1767560522259.png",
       "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_(6)_1767560522259.png",
       "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_(7)_1767560522259.png",
-      "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_(8)_1767560522260.png"
+      "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_(8)_1767560522260.png",
+      "/attached_assets/Screenshot_2026-01-05_at_2.48.35_AM_1767561518984.png",
+      "/attached_assets/Screenshot_2026-01-05_at_2.55.21_AM_1767561924460.png"
     ],
     clientName: "Ming's Chinese Cuisine",
     clientIndustry: "Hospitality / Food-Tech",
