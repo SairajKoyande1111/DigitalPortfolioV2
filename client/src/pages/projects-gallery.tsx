@@ -154,7 +154,7 @@ export default function ProjectsGallery() {
                   >
                     <div className="relative aspect-video overflow-hidden mb-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-white shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-gray-300 flex items-center justify-center">
                       {project.isMobileFirst ? (
-                        <div className="flex items-center justify-center gap-2 h-full w-full">
+                        <div className="flex items-center justify-center gap-4 h-full w-full">
                           <img
                             src={project.galleryImages[0]}
                             alt={`${project.name} screen 1`}
@@ -164,12 +164,6 @@ export default function ProjectsGallery() {
                           <img
                             src={project.galleryImages[1]}
                             alt={`${project.name} screen 2`}
-                            className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
-                            loading="lazy"
-                          />
-                          <img
-                            src={project.galleryImages[2]}
-                            alt={`${project.name} screen 3`}
                             className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
