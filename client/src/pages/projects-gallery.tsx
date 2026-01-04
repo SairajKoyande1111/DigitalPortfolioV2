@@ -153,12 +153,35 @@ export default function ProjectsGallery() {
                     data-testid={`card-project-${project.id}`}
                   >
                     <div className="relative aspect-video overflow-hidden mb-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-white shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-gray-300 flex items-center justify-center">
-                      <img
-                        src={project.imageUrl}
-                        alt={project.name}
-                        className={`transition-transform duration-500 group-hover:scale-105 ${project.isMobileFirst ? 'h-[90%] w-auto object-contain' : 'w-full h-full object-cover'}`}
-                        loading="lazy"
-                      />
+                      {project.isMobileFirst ? (
+                        <div className="flex items-center justify-center gap-2 h-full w-full p-2">
+                          <img
+                            src={project.galleryImages[0] || project.imageUrl}
+                            alt={`${project.name} screen 1`}
+                            className="h-[90%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                          <img
+                            src={project.galleryImages[1] || project.imageUrl}
+                            alt={`${project.name} screen 2`}
+                            className="h-[90%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                          <img
+                            src={project.galleryImages[2] || project.imageUrl}
+                            alt={`${project.name} screen 3`}
+                            className="h-[90%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : (
+                        <img
+                          src={project.imageUrl}
+                          alt={project.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      )}
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-xl font-medium text-gray-900 dark:text-gray-900 line-clamp-2 group-hover:text-black transition-colors text-center">
