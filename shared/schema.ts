@@ -456,6 +456,7 @@ export const projects: Project[] = [
     completedDate: "December 2025",
     technologies: [
       "React",
+      "TypeScript",
       "Node.js",
       "Express.js",
       "MongoDB",
