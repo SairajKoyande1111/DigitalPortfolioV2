@@ -568,9 +568,9 @@ export const projects: Project[] = [
       "Specialized digital-first menu platform for interactive guest ordering, featuring one-tap social media integration and voice search.",
     fullDescription:
       "Ming's Digital Menu is a specialized restaurant product designed to revolutionize the in-house dining experience. This digital menu is meticulously crafted for mobile devices, providing a seamless and interactive interface for guests. It features one-tap social media integration, direct Google review access, a welcoming brand sound, and innovative voice-to-search functionality. The platform organizes the menu with high-quality photos, detailed descriptions, and clear pricing across various categories and filters, ensuring an effortless discovery process for diners.",
-    imageUrl:
-      "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_1767560522258.png",
+    imageUrl: "/attached_assets/Screenshot_2026-01-05_at_1.58.47_PM_1767601729623.png",
     galleryImages: [
+      "/attached_assets/Screenshot_2026-01-05_at_1.58.47_PM_1767601729623.png",
       "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_1767560522258.png",
       "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_(2)_1767562543405.png",
       "/attached_assets/menu.mingschinesecuisine.in_(iPhone_14_Pro_Max)_(4)_1767560522259.png",
