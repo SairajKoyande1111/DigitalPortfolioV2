@@ -447,6 +447,7 @@ export const projects: Project[] = [
     imageUrl:
       "/attached_assets/barrelborn.airavatatechnologies.com_(iPhone_14_Pro_Max)_1767605011722.png",
     galleryImages: [
+      "/attached_assets/barrelborn.airavatatechnologies.com_(iPhone_14_Pro_Max)_1767605011722.png",
       "/attached_assets/barrelborn.airavatatechnologies.com_(iPhone_14_Pro_Max)_(1)_1767605011723.png",
       "/attached_assets/barrelborn.airavatatechnologies.com_(iPhone_14_Pro_Max)_(2)_1767605011723.png",
       "/attached_assets/barrelborn.airavatatechnologies.com_(iPhone_14_Pro_Max)_(3)_1767605011724.png",
