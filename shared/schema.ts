@@ -53,6 +53,13 @@ export interface Project {
 // Sample services data
 export const services: Service[] = [
   {
+    id: "3",
+    title: "Software Development",
+    tagline: "Custom Software",
+    icon: "Code",
+    slug: "software-development",
+  },
+  {
     id: "1",
     title: "Website Development",
     tagline: "Modern Web Solutions",
@@ -65,13 +72,6 @@ export const services: Service[] = [
     tagline: "iOS & Android Apps",
     icon: "Smartphone",
     slug: "mobile-application-development",
-  },
-  {
-    id: "3",
-    title: "Software Development",
-    tagline: "Custom Software",
-    icon: "Code",
-    slug: "software-development",
   },
   {
     id: "4",
