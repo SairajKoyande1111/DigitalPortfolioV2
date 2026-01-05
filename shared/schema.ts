@@ -445,9 +445,9 @@ export const projects: Project[] = [
     fullDescription:
       "Barrelborn Digital Menu is a sophisticated, mobile-first solution that redefines the guest experience. By bridging the gap between traditional dining and modern digital convenience, the platform allows guests to explore the menu with high-resolution visuals, detailed descriptions, and real-time availability. Designed for efficiency and elegance, it streamlines restaurant operations while providing a premium, contactless interface for every diner.",
     imageUrl:
-      "/attached_assets/barrelborn.airavatatechnologies.com_(iPhone_14_Pro_Max)_1767605011722.png",
+      "/attached_assets/Screenshot_2026-01-05_at_3.45.09_PM_1767608111956.png",
     galleryImages: [
-      "/attached_assets/barrelborn.airavatatechnologies.com_(iPhone_14_Pro_Max)_1767605011722.png",
+      "/attached_assets/Screenshot_2026-01-05_at_3.45.09_PM_1767608111956.png",
       "/attached_assets/barrelborn.airavatatechnologies.com_(iPhone_14_Pro_Max)_(1)_1767605011723.png",
       "/attached_assets/barrelborn.airavatatechnologies.com_(iPhone_14_Pro_Max)_(2)_1767605011723.png",
       "/attached_assets/barrelborn.airavatatechnologies.com_(iPhone_14_Pro_Max)_(3)_1767605011724.png",
