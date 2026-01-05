@@ -46,6 +46,7 @@ const techIconMap: Record<string, { icon: JSX.Element; category: string }> = {
   "JWT Security": { icon: <Shield className="w-7 h-7 text-green-600" />, category: "Security" },
   "Hostinger VPS Deployment": { icon: <SiHostinger className="w-7 h-7 text-[#673DE6]" />, category: "Deployment" },
   "Vercel Deployment": { icon: <SiVercel className="w-7 h-7 text-black dark:text-white" />, category: "Deployment" },
+  "Netlify Deployment": { icon: <ExternalLink className="w-7 h-7 text-[#00C7B7]" />, category: "Deployment" },
   "Recharts": { icon: <CheckCircle2 className="w-7 h-7 text-blue-400" />, category: "Frontend" },
   "Framer Motion": { icon: <CheckCircle2 className="w-7 h-7 text-purple-400" />, category: "Frontend" },
   "PostgreSQL": { icon: <Database className="w-7 h-7 text-[#336791]" />, category: "Database" },
