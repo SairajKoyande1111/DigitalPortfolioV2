@@ -453,7 +453,7 @@ export const projects: Project[] = [
     clientLocation: "Mumbai, India",
     websiteUrl: "https://ramanifashion.in/",
     duration: "4 weeks",
-    completedDate: "January 2026",
+    completedDate: "December 2025",
     technologies: [
       "React",
       "Node.js",
@@ -462,7 +462,6 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "Framer Motion",
       "JWT Security",
-      "Cloudinary (Image Hosting)",
       "Hostinger VPS Deployment",
     ],
     features: [
