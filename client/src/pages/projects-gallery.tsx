@@ -167,6 +167,14 @@ export default function ProjectsGallery() {
                             className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
+                          {project.galleryImages[2] && (
+                            <img
+                              src={project.galleryImages[2]}
+                              alt={`${project.name} screen 3`}
+                              className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                              loading="lazy"
+                            />
+                          )}
                         </div>
                       ) : (
                         <img
